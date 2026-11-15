@@ -8,8 +8,10 @@ namespace GadgetApp.Models
 
         [Required]
         public string Name { get; set; }
-        
+
         public string description {get;set;}
+
+        public string Email {get;set;}
 
     }
 }

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<GadgetApp.Models.Gadget>
+<h1>Gadgets</h1>
+@foreach( var gadget in Model)
+{
+	
+	<h2>@gadget.Name</h2>
+	<p>@gadget.Description</p>
+	
+
+	<p>Price : ₹@gadget.price</p>
+	<p>Category ID : @gadget.CategoryId</p>
+	<hr />
+}

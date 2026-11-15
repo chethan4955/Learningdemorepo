@@ -1,0 +1,54 @@
+﻿@model GadgetApp.Models.Gadget
+
+<h1>Add Gadget</h1>
+<div asp-validation-summary="All"></div>
+<form method="post">
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div>
+        <label asp-for="price"></label>
+        <input asp-for="price" />
+        <span asp-validation-for="price"></span>
+    </div>
+
+    <div>
+        <label asp-for="CategoryId">Category</label>
+
+        <select asp-for="CategoryId">
+            <option value="">-- Select Category --</option>
+
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.Id">
+                    @category.Name
+                </option>
+            }
+        </select>
+
+        <span asp-validation-for="CategoryId"></span>
+    </div>
+
+    <div>
+        <label asp-for="rating"></label>
+        <input asp-for="rating" />
+        <span asp-validation-for="rating"></span>
+    </div>
+
+    <div>
+        <label asp-for="Imageurl"></label>
+        <input asp-for="Imageurl" />
+        <span asp-validation-for="Imageurl"></span>
+    </div>
+    <button type="submit">Save Gadget</button>
+</form>
